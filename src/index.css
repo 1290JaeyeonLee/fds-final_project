@@ -1,4 +1,5 @@
 /*! bulma.io v0.7.1 | MIT License | github.com/jgthms/bulma */
+@import url("https://fonts.googleapis.com/css?family=Roboto:700,900");
 @-webkit-keyframes spinAround {
   from {
     -webkit-transform: rotate(0deg);
@@ -10676,7 +10677,8 @@ video {
 }
 
 .footer {
-  height: 40px;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .product-layout {
@@ -11289,7 +11291,7 @@ video {
   text-align: center;
   position: fixed;
   z-index: 100;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .pre__layout .pre-item {
@@ -11314,7 +11316,7 @@ video {
           justify-content: center;
 }
 
-.button.is-light {
+.button.is-white {
   margin: 10px;
 }
 
@@ -11328,6 +11330,11 @@ video {
 
 .pre_content {
   margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid white;
+  width: 50%;
+  height: 50%;
 }
 
 .admin-main__info {
@@ -11523,5 +11530,89 @@ video {
 .admin-form__button {
   margin: 30px 0;
   text-align: center;
+}
+
+.txt {
+  position: fixed;
+  padding-top: 40vh;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: 100;
+  text-align: center;
+  font-family: 'Roboto';
+  font-size: 12vmin;
+  font-weight: 700;
+  -webkit-animation: netflix_style 3.5s infinite;
+          animation: netflix_style 3.5s infinite;
+  outline: none;
+  white-space: nowrap;
+}
+
+@-webkit-keyframes netflix_style {
+  0% {
+    color: #000000;
+    -webkit-transform: scale(1.5, 1.5);
+            transform: scale(1.5, 1.5);
+  }
+  10% {
+    color: #f3f3f3;
+    -webkit-transform: scale(1.5, 1.5);
+            transform: scale(1.5, 1.5);
+  }
+  15% {
+    color: #f3f3f3;
+  }
+  20% {
+    color: #e90418;
+    text-shadow: none;
+    -webkit-transform: scale(1.1, 1.1);
+            transform: scale(1.1, 1.1);
+  }
+  75% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+    color: #e90418;
+    -webkit-transform: scale(0.85, 0.9);
+            transform: scale(0.85, 0.9);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes netflix_style {
+  0% {
+    color: #000000;
+    -webkit-transform: scale(1.5, 1.5);
+            transform: scale(1.5, 1.5);
+  }
+  10% {
+    color: #f3f3f3;
+    -webkit-transform: scale(1.5, 1.5);
+            transform: scale(1.5, 1.5);
+  }
+  15% {
+    color: #f3f3f3;
+  }
+  20% {
+    color: #e90418;
+    text-shadow: none;
+    -webkit-transform: scale(1.1, 1.1);
+            transform: scale(1.1, 1.1);
+  }
+  75% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+    color: #e90418;
+    -webkit-transform: scale(0.85, 0.9);
+            transform: scale(0.85, 0.9);
+  }
+  100% {
+    opacity: 0;
+  }
 }
 /*# sourceMappingURL=index.css.map */
