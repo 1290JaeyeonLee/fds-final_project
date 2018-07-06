@@ -24,7 +24,7 @@ export default function CoatItem({
               onClick={e => RemoveEvent()}
             />
           </a>
-          <div className="title is-4">{title}</div>
+          <div className="title is-6 item-title">{title}</div>
         </div>
       </div>
     </div>

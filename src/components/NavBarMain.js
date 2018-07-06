@@ -4,6 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 export default function NavBar({
   username = null, // 표시할 사용자 이름
   onLogout = () => {}, // 로그아웃 버튼 클릭 시 호출할 함수
+  admin = false,
 }) {
   return (
     <React.Fragment>
@@ -26,11 +27,11 @@ export default function NavBar({
         <aside className="menu">
           <p className="menu-label">ACCOUNT</p>
           <ul className="menu-list">
-            {username ? (
+            {admin ? (
               <React.Fragment>
-                <span className="navbar-item">Welcome {username}!</span>
+                <span className="navbar-item">Welcome Admin!</span>
                 <li>
-                  <NavLink to="/admin" className="navbar-item">
+                  <NavLink to="/cart" className="navbar-item">
                     CART
                   </NavLink>
                 </li>
@@ -42,6 +43,29 @@ export default function NavBar({
                 <li>
                   <NavLink to="/admin" className="navbar-item">
                     ADMIN
+                  </NavLink>
+                </li>
+                <li>
+                  <Link
+                    to="/main"
+                    onClick={e => onLogout()}
+                    className="navbar-item"
+                  >
+                    LOGOUT
+                  </Link>
+                </li>
+              </React.Fragment>
+            ) : username ? (
+              <React.Fragment>
+                <span className="navbar-item">Welcome {username}!</span>
+                <li>
+                  <NavLink to="/cart" className="navbar-item">
+                    CART
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/orderhistory" className="navbar-item">
+                    ORDER
                   </NavLink>
                 </li>
                 <li>

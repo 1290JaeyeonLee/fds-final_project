@@ -13,9 +13,10 @@ export default class NavBarMainContainer extends React.Component {
     if (loggedOut) return <Redirect to="/" />;
     return (
       <AuthConsumer>
-        {({ username, logout }) => (
+        {({ username, logout, admin }) => (
           <NavBarMain
             username={username}
+            admin={admin}
             brandAs={Link}
             brandProps={{ to: '/' }}
             loginAs={Link}

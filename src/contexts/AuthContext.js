@@ -21,6 +21,7 @@ class AuthProvider extends React.Component {
     address: null,
     phone: null,
     mail: null,
+    admin: false,
   };
 
   async fetchMe() {
@@ -29,10 +30,18 @@ class AuthProvider extends React.Component {
     }));
     try {
       const res = await superAPI.get('/me');
-      this.setState({
-        id: res.data.id,
-        username: res.data.username,
-      });
+      if (res.data.id === 1) {
+        this.setState({
+          id: res.data.id,
+          username: res.data.username,
+          admin: true,
+        });
+      } else {
+        this.setState({
+          id: res.data.id,
+          username: res.data.username,
+        });
+      }
     } finally {
       this.setState(prevState => ({
         loading: prevState.loading - 1,
@@ -63,6 +72,7 @@ class AuthProvider extends React.Component {
     this.setState({
       id: null,
       username: null,
+      admin: false,
     });
   };
 
@@ -102,6 +112,7 @@ class AuthProvider extends React.Component {
       address: this.state.address,
       phone: this.state.phone,
       email: this.state.email,
+      admin: this.state.admin,
     };
     return <Provider value={value}>{this.props.children}</Provider>;
   }
